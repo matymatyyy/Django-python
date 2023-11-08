@@ -1,0 +1,53 @@
+<DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1.0"
+            />
+            <title>Tienda</title>
+            {% load static %}
+            <link rel="stylesheet" href="{% static 'tienda1.css' %}" />
+            <link rel="stylesheet" href="{% static 'estilos.css' %}" />
+        </head>
+<body>
+		<header>
+			<div class="page-wrapper">
+				<div class="nav-wrapper">
+					
+				 <nav class="navbar">
+				   <h2>Maty Shop</h2>
+				   <div class="menu-toggle" id="mobile-menu">
+					 <span class="bar"></span>
+					 <span class="bar"></span>
+					 <span class="bar"></span>
+				   </div>
+				   <ul class="nav no-search">
+					 <li class="nav-item"><a href="/tienda">Inicio</a></li>
+					 <li class="nav-item"><a href="/trabajo">Informacaion</a></li>
+					 <li class="nav-item"><a href="/info">atencion</a></li>
+					 <li class="nav-item"><a href="/contacto">Cuenta</a></li>
+					 <li class="nav-item"><a href="/">Salir</a></li>
+				   </ul>
+				 </nav>
+				 </div></div>
+                </header>
+             <div class="container-form">
+                <div class="info-form">
+                    <h2>Contáctanos</h2>
+                    <p>Contactese con nostros por cualquier problema con la web, nuestro unico desarrollardor maty lo antendera con gusto</p>
+                    <a href="#"><i class="fa fa-phone"></i> 2352551599</a>
+                    <a href="#"><i class="fa fa-envelope"></i> 44626656@intech.edu.ar</a>
+                    <a href="#"><i class="fa fa-map-marked"></i> Chacabuco, Buenos Aires ,Argentina</a>
+                </div>
+                <form action="/tienda" autocomplete="off">
+                    <input type="text" name="nombre" placeholder="Tu Nombre" class="campo", required>
+                    <input type="emal" name="email" placeholder="Tu Email" class="campo", required>
+                    <textarea name="mensaje" placeholder="Tu Mensaje..."></textarea>
+                    <input type="submit" name="enviar" value="Enviar Mensaje" class="btn-enviar">
+                </form>
+            </div>
+        </br></br></br>
+</body>

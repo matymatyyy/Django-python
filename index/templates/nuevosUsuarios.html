@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  {% load static %}
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:400,700'><link rel="stylesheet" href="{% static 'index2.css' %}">
+
+</head>
+<body>
+<div class="login-form">
+    <h1>{{felicidades}}</h1>
+    
+    <div class="content">
+      <img src="{% static img %}"  width="200" height="200">
+      <p><h1>{{ usuario_creado }}</h1></p>
+  </form>
+  <br>
+  <div class="action">
+    <button type="submit" value="entrar" name="submit_action" id="boton">Volver al inicio</button>
+  </div>
+  <script>
+    document.getElementById('boton').addEventListener('click', function() {
+        window.location.href = 'http://127.0.0.1:8000/';
+    });
+</script>
+</div>
+  <script  src="{% static 'index.js' %}"></script>
+
+</body>
+</html>

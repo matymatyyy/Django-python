@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  {% load static %}
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:400,700'><link rel="stylesheet" href="{% static 'index2.css' %}">
+
+</head>
+<body>
+  <br>
+  <br>
+  <br>
+<div class="login-form">
+  <h1>Recupera tu cuenta</h1>
+  <div class="content">
+    <p>Ingresa tu correo electrónico para que te enviemos tu contraseña al correo.<br>
+      Despues de enviarla se te reenviara al incio.
+    </p>
+    <div class="input-field">
+      <input type="email" placeholder="Email" autocomplete="nope", name="correo" required maxlength="50">
+    </div>
+    <div class="action">
+      <button formnovalidate type="submit" value="registrar" name="submit_action" id="boton">enviar</button>
+    </div>
+</div>
+  <script  src="{% static 'index.js' %}"></script>
+  <script>
+    document.getElementById('boton').addEventListener('click', function() {
+        window.location.href = 'http://127.0.0.1:8000/';
+    });
+</script>
+</body>
+</html>

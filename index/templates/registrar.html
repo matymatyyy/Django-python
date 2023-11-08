@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Registrar</title>
+  {% load static %}
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:400,700'><link rel="stylesheet" href="{% static 'index2.css' %}">
+
+</head>
+<body>
+<div class="login-form">
+ <form method="post" action="{% url 'procesar_formulario2' %}">
+    {% csrf_token %}
+    <h1>Iniciar sesion</h1>
+   
+    <div class="content">
+      <div class="input-field">
+        <input type="text" placeholder="Nombre y apellido" autocomplete="nope", name="nombre" required title="Por favor, ingresa tu nombre">
+      </div>
+      <div class="input-field">
+        <input type="number"  placeholder="Numero de telefono" autocomplete="nope", name="tel" required>
+      </div>
+      <div class="input-field">
+        <input type="email" placeholder="Email" autocomplete="nope", name="correo" required>
+      </div>
+      <div class="input-field">
+        <input type="password" placeholder="Password" autocomplete="new-password" name="contraseña" required>
+      </div>
+      <div class="input-field">
+        <input type="date" placeholder="Fecha de nacimiento" autocomplete="nope", name="nacimiento" required>
+      </div>
+      <a class="link"> <input type="checkbox" required> Estoy de acuerdo con los terminos y condiciones</a>
+    </div>
+    <div class="action">
+      <button type="submit" value="entrar" name="submit_action">Registrar</button>
+    </div>
+  </form>
+</div>
+  <script  src="{% static 'index.js' %}"></script>
+
+</body>
+</html>

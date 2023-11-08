@@ -1,0 +1,81 @@
+<DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1.0"
+            />
+            <title>Tienda</title>
+            {% load static %}
+            <link rel="stylesheet" href="{% static 'index2.css' %}" />
+            <link rel="stylesheet" href="{% static 'tienda1.css' %}" />
+            
+        </head>
+<body>
+		<header>
+			<div class="page-wrapper">
+				<div class="nav-wrapper">
+					
+				 <nav class="navbar">
+				   <h2>Maty Shop</h2>
+				   <div class="menu-toggle" id="mobile-menu">
+					 <span class="bar"></span>
+					 <span class="bar"></span>
+					 <span class="bar"></span>
+				   </div>
+				   <ul class="nav no-search">
+					 <li class="nav-item"><a href="/tienda">Inicio</a></li>
+					 <li class="nav-item"><a href="/trabajo">Informacaion</a></li>
+					 <li class="nav-item"><a href="/info">atencion</a></li>
+					 <li class="nav-item"><a href="/contacto">Cuenta</a></li>
+					 <li class="nav-item"><a href="/">Salir</a></li>
+				   </ul>
+				 </nav>
+				 </div></div>
+                </header>
+                <div id="dos">
+                    <div class="login-form">
+                        <form>
+                          <h1>Usuario {{ nombre }}</h1>
+                          <div class="content">
+                            <div class="input-field">
+                              <p>Aca estan tus datos:</p>
+                          </div>
+                          <p>nombre: {{ nombre }}</p>
+                          <p>correo: {{ gmail }}</p>
+                          <p>contraseña: {{contra }}</p>
+                          <p>numero telefono: {{ numero }}</p>
+                          <p>fecha de nacimiento: {{ fecha }}</p>
+                        </form>
+                      </div>
+                    </div>
+                <div class="login-form">
+                    <form  method="post" action="{% url 'procesar_formulario3' %}">
+                      {% csrf_token %}
+                      <h1>Cambiar contraseña</h1>
+                      <div class="content">
+                        <div class="input-field">
+                          <div id="mensaje-error" style="color: red;"></div>
+                          {% if messages %}
+                  <ul class="messages">
+                      {% for message in messages %}
+                      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                      {% endfor %}
+                  </ul>
+                  {% endif %}
+                </br>
+                          <input type="password" placeholder=" Nueva Contraseña" autocomplete="new-password", name="correo" required maxlength="20">
+                        </div>
+                        <div class="input-field">
+                          <input type="password" placeholder="Nueva Contraseña" autocomplete="new-password" name="contraseña" required maxlength="20">
+                        </div>
+                      </div>
+                      <div class="action">
+                        <button formnovalidate type="submit" value="registrar" name="submit_action">Confirmar contraseña</button>
+                      </div>
+                    </form>
+                  </div>
+                
+            </body>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  {% load static %}
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:400,700'><link rel="stylesheet" href="{% static 'index.css' %}">
+
+</head>
+<body>
+  <br>
+  <br>
+<div class="login-form">
+  <form method="post" action="{% url 'procesar_formulario' %}">
+    {% csrf_token %}
+    <h1>Iniciar sesion</h1>
+    <div class="content">
+      <div class="input-field">
+        {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+</br>
+        <input type="email" placeholder="Email" autocomplete="nope", name="correo" required maxlength="50">
+      </div>
+      <div class="input-field">
+        <input type="password" placeholder="Contraseña" autocomplete="new-password" name="contraseña" required maxlength="20">
+      </div>
+      <a href="olvidaste" class="link">¿Te olvidaste la contraseña?</a>
+    </div>
+    <div class="action">
+      <button formnovalidate type="submit" value="registrar" name="submit_action">Registrar</button>
+      <button type="submit" value="entrar" name="submit_action">Iniciar sesion </button>
+    </div>
+  </form>
+</div>
+  <script  src="{% static 'index.js' %}"></script>
+
+</body>
+</html>
